@@ -4,15 +4,16 @@ build:
 	sudo docker build -t swiftengine:latest .
 
 run:
-	sudo docker run \ 
-		-it -p 80:80 \
+	docker rm swiftengine
+	sudo docker run \
+		-it -p 80:8887 \
 		-v /Users/administrator/Temp:/var/www/html \
 		--name swiftengine \
-		swiftengine 
+		swiftengine
 	
 run-shell:
 	sudo docker run \
 		-it \
 		-p 80:80 \
-		spoto-whmcs \
+		swiftengine4 \
 		/bin/bash
